@@ -1,0 +1,14 @@
+---
+title: "Auguri a tutti!"
+url: "10/auguri-a-tutti-"
+date: 2007-12-24T14:01:32.0000000Z
+lastmod: 2007-12-24T14:01:32.0000000Z
+tags: ["Imported"]
+draft: false
+---
+<p>Questo mese di Dicembre è stato indubbiamente uno dei più vari ed interessanti degli ultimi tempi.</p>
+<p>Innanzitutto il weekend del 1 Dicembre sono andato a Roma, insieme ai miei fidi amici Vito e Paco. Ufficiamente questo piccolo viaggio è stato intrapreso per partecipare al Javaday di Roma, un evento del Politecnico di Roma, dedicato ad approfondire buona parte delle sfaccettature di questo interessante linguaggio di programmazione. In realtà esistevano anche altre motivazioni che mi hanno portato a partecipare: trascorrere un weekend diverso, ri-visitare Roma in tutta la sua magnificenza e passare un po di tempo con mia sorella.</p>
+<p>E' stato anche il mese della mia prima trasferta di lavoro da quando sono tra le fila della Mermec. Dal 10 al 14, infatti, sono andato a Berna, in Svizzera, per lavorare sui sistemi software del treno diagnostico che l'azienda per cui lavoro ha venduto ad SBB, le ferrovie svizzere. Non ero mai stato in Svizzera e, dopo averla visitata, posso dire di esserne rimasto favorevolmente impressionato. La gente è educata, cordiale e precisa e quando si trascorre un po di tempo lì si ha l'impressione che le cose funzionino bene, così come dovrebbero essere. Un quadro decisamente diverso dal disastroso quadretto politico che la nostra bella Italia ci propina ogni giorno. Una curiosità: il viaggio a Berna ha avuto come tappa intermedia Milano. Ritornando in quella città dove ho passato 7 mesi nell'ultimo anno, una ondata di ricordi mi ha attraversato e, sorprendendo me stesso, tali ricordi non mi hanno suscitato negatività, ma, al contrario, quasi nostalgia. Un'altra dimostrazione di come la maggioranza delle esperienze nella vita, per quanto possano essere vissute negativamente, rappresentano comunque una crescita positiva per una persona.</p>
+<p>Parliamo adesso del Natale. Ieri discutevo con la mia dolcissima Teresa di quanto questa festa sia diventata sinonimo di consumismo. Chiaramente non è il primo anno che tale sensazione di manifesta e, anzi, si può dire ormai che una simile osservazione sia una banalità. Io continuo, tuttavia, a difendere questa ricorrenza in quanto ritengo che gli aspetti positivi che la circondano siano di gran lunga superiori a quelli negativi. Non mi riferisco all'ambito religioso, ma al fatto che probabilmente questo è uno dei pochissimi periodi dell'anno in cui le persone pensano agli altri e non solo a se stessi. Anche il solo pensiero dei regali da comprare ai propri cari è un aspetto molto positivo che si aggiunge ad altri momenti, quali lo scambio degli auguri ed i ritrovi con la famiglia.</p>
+<p>Non posso, quindi, che cogliere l'occasione per fare i miei auguri a tutti voi.</p>
+<p>Buon Natale e Felice Anno Nuovo!</p>

@@ -1,0 +1,14 @@
+---
+title: "Rubrica PA per Windows Phone"
+url: "rubrica-pa-per-windows-phone"
+date: 2012-06-08T07:46:00.0000000Z
+lastmod: 2012-06-08T07:47:00.0000000Z
+tags: ["Imported"]
+draft: false
+---
+<p style="text-align: center;"><img src="/Media/Default/BlogPost/SplashScreenImage.jpg" alt="Rubrica PA" width="250" height="417" /></p>
+<p>Oggi vi presento <a href="http://www.vifani.com/mobileapp/rubrica-pa"><strong>Rubrica PA</strong></a>, la mia nuova app per Windows Phone che integra un database di <strong>oltre 100.000 voci</strong> tra cui scuole, biblioteche, URP, agenzie ACI e, più in generale, qualsiasi ufficio legato alla <strong>pubblica amministrazione</strong> (comuni, province, regioni, ministeri, ...). Inoltre, per ogni voce è possibile accedere a tutte le informazioni utili per contattare il relativo ufficio: telefono, email, sito web, indirizzo, ecc...</p>
+<p>Ammetto che questa volta non è stato affatto semplice nè realizzare, nè pubblicare questa app per Windows Phone. La sfida in termini di implementazione è stata prevalentemente quella legata alla gestione e alla ricerca all'interno di una così grande mole di dati. Chiaramente non ho potuto usare un motore di ricerca full text in Windows Phone come quello che abbiamo a disposizione in SQL Server (benché comunque i dati stiano in un <strong>database SQL Server CE</strong>) e non ho verificato se fosse possibile utilizzare una libreria come Lucene. In parole povere ho implementato a manina  un vero e proprio motore di <strong>ricerca full text</strong> che analizza la sorgente dati, tokenizza le stringhe, assegna ad ogni token un peso, ecc... Il risultato penso sia abbastanza soddisfacente :)</p>
+<p>Rubrica PA è stata sottomessa al processo di certificazione Microsoft il 15 Maggio, mentre è arrivata online solo l'8 Giugno. Il problema in questo caso è stato duplice: da un lato per ragioni a me sconosciute Microsoft ha impiegato 15 giorni per farmi sapere la prima volta che l'app non aveva passato la certificazione perché avevo inserito tra i paesi in cui pubblicarla una serie di <strong>paesi in cui è vietato l'uso di Bing Maps</strong> (Cina, Vietnam, ecc...). Dopodiché l'ho sottoposta nuovamente a Microsoft il 30 Giugno e ci sono voluti un'altra decina di giorni per vederla online (in realtà era stata approvata il 5 Giugno, ma sul <a href="http://windowsphone.com/s?appid=256ae271-a27f-44d3-aa0a-7ae9601c92d4" target="_blank">Marketplace</a> è comparsa solo oggi).</p>
+<p>Buon download a tutti!</p>
+<p style="text-align: center;"><a href="http://windowsphone.com/s?appid=256ae271-a27f-44d3-aa0a-7ae9601c92d4" title="Rubrica PA sul Marketplace" target="_blank"><img src="/Media/Default/OrarioTreni/Download-IT-Med.png" alt="" width="165" height="54" /></a></p>

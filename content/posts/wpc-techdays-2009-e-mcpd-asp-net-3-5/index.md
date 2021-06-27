@@ -1,0 +1,14 @@
+---
+title: "WPC Techdays 2009 e MCPD ASP.NET 3.5"
+url: "38/wpc-techdays-2009-e-mcpd-asp-net-3-5"
+date: 2009-12-10T20:48:51.0000000Z
+lastmod: 2009-12-10T20:48:51.0000000Z
+tags: ["Imported"]
+draft: false
+---
+<p>Sono un paio di mesi che non mi faccio vivo nel blog. E' un periodo ricco di impegni che purtroppo mi sta facendo dedicare poco tempo a tutto ciò che normalmente faccio del tempo libero, tra cui mantenere attivo questo blog.</p>
+<p>Visto che ho introdotto questo post in questo modo, vi racconterò cosa mi ha tenuto occupato nel mese di Novembre fino ad oggi.</p>
+<p>Il primo grande impegno è stato il WPC Techdays 2009 che, per chi non lo sapesse, è il più importante evento che tiene Microsoft in Italia destinato agli sviluppatori software e ai professionisti IT. Ben sei sale ognuna delle quali teneva ogni ora una sessione tecnica, il tutto spalmato in tre giorni (24-25-26 Novembre) e dalle 8 alle 10 ore al giorno. E' stato un full immersion molto intensivo che tra l'altro quest'anno ha assunto particolare importanza e rilevanza visto che a Marzo del 2009 verrà introdotto il .NET Framework 4.0 e tutti i relativi strumenti di sviluppo a corredo.</p>
+<p style="text-align: center"><img alt="WPC Techdays 2009" width="450" height="338" src="/public/image/wpc.JPG" /></p>
+<p>In questa occasione, inoltre, ho avuto modo di provare Surface, il software sviluppato da Microsoft che, in abbinamento ad un particolare hardware sotto forma di tavolo, consente di accedere ad una serie di contenuti multimediali ed interattivi completamente usando un'interfaccia touchscreen. L'impressione che ho avuto è che il sistema trasmetta un'ottima sensibilità al tocco (in realtà non ha una superficia touchscreen ma usa un sistema di telecamere per capire la posizione delle dita) e che applicazioni pratiche e diffuse di questo tipo di tecnologia siano dietro le porte.</p>
+<p>L'ultima fatica che tanto tempo mi ha rubato è stato l'esame Microsoft 70-564. Con questo esame, dedicato a chi vuole approfondire la programmazione su ASP.NET 3.5 a più alto livello, cioè dedicandosi più alle scelte architetturali che al semplice codice, sono diventato Microsoft Certified Professional Developer. Si tratta di un traguardo importante perché è il primo percorso di certificazioni Microsoft, quello dedicato alle tecnologie web, che completo. In attesa di decidere quando iniziare con il prossimo percorso, mi prendo il mio meritato riposo durante queste vacanze natalizie dove mi dedicherò esclusivamente al gioco su PC <img alt="" src="http://www.vifani.com/fckeditor/editor/images/smiley/default/icon_mrgreen.gif" /></p>

@@ -1,0 +1,14 @@
+---
+title: "14 Aprile 2008: ancora una volta si cambia"
+url: "12/14-aprile-2008--ancora-una-volta-si-cambia"
+date: 2008-03-29T19:17:06.0000000Z
+lastmod: 2008-03-29T19:17:06.0000000Z
+tags: ["Imported"]
+draft: false
+---
+<p>In un periodo come quello durante il quale sto scrivendo oggi, il titolo del blog potrebbe sembrare essere riferito alla situazione politica del nostro Paese. Molte sono le parole che si potrebbero spendere in proposito, ma sfortunatamente per chi non vede l'ora di addentrarsi in un sanguinolento confronto politico, il mio blog è oggi riferito a me stesso e non all'Italia.</p>
+<p>Probabilmente qualcuno dei pochi che leggono questo blog conosce già a cosa mi riferisco: cambio lavoro.</p>
+<p>Non è la prima volta che faccio un simile passo. Già in passato, per la precisione 9 mesi fa, presi la stessa decisione abbandonando la via del consulente informatico. Qualcuno potrebbe pensare che da quando ho iniziato la mia esperienza professionale stia spiccando in me una sorta di fugacità lavorativa, cioè la volontà di cambiare spesso il mio lavoro. In realtà mi permetto di affermare che non sono io ad essere "voglioso di cambiare", ma è il mercato del lavoro stesso che impone un comportamento simile se si ha voglia di progredire velocemente in termini contrattuali e professionali.</p>
+<p>Mi sono reso conto, infatti, che, almeno nella nostra generazione, sarà molto difficile che un impiegato inizi un lavoro e permanga nella stessa azienda per 30-40 anni come hanno fatto i nostri padri e nonni. La liberalizzazione del mercato del lavoro e la sua globalizzazione, l'introduzione dei contratti flessibili (o precari che dir si voglia), porta a mio avviso ad un comportamento in cui io stesso mi riconosco: la continua ricerca di una posizione professionale e contrattuale migliorativa. Non che questo non possa accadere anche a persone che hanno un contratto a tempo indeterminato, ma ritengo che dal punto di vista psicologico queste ultime siano meno spinte e motivate nel cercare qualcosa di meglio, anche perché cambiare lavoro comporta molti aspetti impegnativi: rimettersi in discussione, riguadagnarsi la fiducia e la stima dei propri superiori, ritrovarsi in un ambiente nuovo, colleghi diversi, ecc...</p>
+<p>A tutto questo aggiungo alcuni personalissimi fattori umani: la mia ambizione e determinazione e la mia volontà di ricercare sfide nuove e di conoscere le tecnologie informatiche all'avanguardia.</p>
+<p>Non è stata una scelta facile: l'11 Aprile lascio un gruppo di lavoro eccezionale dal quale ho imparato moltissimo e nel quale ho sempre trovato un ambiente di lavoro sereno e divertente. Nella speranza di ritrovarmi in un contesto altrettanto piacevole, inizio questa mia nuova avventura.</p>

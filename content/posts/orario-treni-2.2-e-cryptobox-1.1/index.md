@@ -1,0 +1,11 @@
+---
+title: "Orario Treni 2.2 e CryptoBox 1.1"
+url: "orario-treni-2.2-e-cryptobox-1.1"
+date: 2012-09-01T12:33:46.0000000Z
+lastmod: 2012-09-01T12:33:46.0000000Z
+tags: ["Imported"]
+draft: false
+---
+<p>Come anticipato nel precedente post, una nuova versione di <a href="http://itunes.apple.com/it/app/orario-treni/id433018440" title="Orario Treni" target="_blank">Orario Treni</a>, la 2.2, ha fatto capolino da qualche giorno nell'Apple Store. La novità principale di questa versione è rappresentata dalla compatibilità con iOS 6. A tal proposito faccio i miei complimenti a Giuseppe per avermi contattato ed aver indovinato questa novità riconoscendo nello screenshot del precedente post che la barra di stato è colorata di rosso. In iOS 6, infatti, tutte le app che usano la barra di navigazione, imposteranno automaticamente la barra di stato ad una tonalità leggermente più scura rispetto a quella della barra di navigazione.</p>
+<p style="text-align: center;"><img src="/Media/Default/BlogPost/Screenshot_5.png" alt="" width="200" height="300" /> <img src="/Media/Default/BlogPost/Screenshot_9.png" alt="" width="200" height="300" /> <img src="/Media/Default/BlogPost/Screenshot_14.png" alt="" width="200" height="300" /> <img src="/Media/Default/BlogPost/Screenshot_20.png" alt="" width="200" height="300" /></p>
+<p>Inoltre, tutte le applicazioni della <a href="http://cryptolab.vifani.com/" title="Crypto Suite (CryptoBox Pro, CryptoBox, CryptoDoc e CryptoPic)" target="_blank">Crypto Suite</a> (CryptoBox Pro, CryptoBox, CryptoDoc e CryptoPic) sono state aggiornate alla <strong>versione 1.1</strong> che, oltre ad essere compatibili con iOS 6, risolvono alcuni bug ed aggiungono la possibilità di modificare la password ed il suggerimento relativo. A tal proposito vi faccio presente che la modifica della password è un'operazione realmente costosa in quanto l'app deve decriptare tutti i dati con la vecchia password e ricriptarli con la nuova. Effettuate, quindi, questa operazione solo se è strettamente necessario.</p>

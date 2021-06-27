@@ -1,0 +1,1145 @@
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0 !important;
+  -webkit-border-radius: 0 0 0 0 !important;
+  background: none !important;
+  border: 0 !important;
+  bottom: auto !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  line-height: 1.1em !important;
+  margin: 0 !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: static !important;
+  right: auto !important;
+  text-align: left !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  width: auto !important;
+  box-sizing: content-box !important;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  min-height: inherit !important;
+  min-height: auto !important;
+}
+
+.syntaxhighlighter {
+  width: 100% !important;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 1em !important;
+}
+.syntaxhighlighter.source {
+  overflow: hidden !important;
+}
+.syntaxhighlighter .bold {
+  font-weight: bold !important;
+}
+.syntaxhighlighter .italic {
+  font-style: italic !important;
+}
+.syntaxhighlighter .line {
+  white-space: pre !important;
+}
+.syntaxhighlighter table {
+  width: 100% !important;
+}
+.syntaxhighlighter table caption {
+  text-align: left !important;
+  padding: .5em 0 0.5em 1em !important;
+}
+.syntaxhighlighter table td.code {
+  width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+  position: relative !important;
+}
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  background: white !important;
+  padding-left: 1em !important;
+  overflow: hidden !important;
+  white-space: pre !important;
+}
+.syntaxhighlighter table td.gutter .line {
+  text-align: right !important;
+  padding: 0 0.5em 0 1em !important;
+}
+.syntaxhighlighter table td.code .line {
+  padding: 0 1em !important;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+  padding-left: 0em !important;
+}
+.syntaxhighlighter.show {
+  display: block !important;
+}
+.syntaxhighlighter.collapsed table {
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  padding: 0.1em 0.8em 0em 0.8em !important;
+  font-size: 1em !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+  display: inline !important;
+  margin-right: 1em !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+  padding: 0 !important;
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar {
+  position: absolute !important;
+  right: 1px !important;
+  top: 1px !important;
+  width: 11px !important;
+  height: 11px !important;
+  font-size: 10px !important;
+  z-index: 10 !important;
+}
+.syntaxhighlighter .toolbar span.title {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar a {
+  display: block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  padding-top: 1px !important;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+  display: none !important;
+}
+.syntaxhighlighter.ie {
+  font-size: .9em !important;
+  padding: 1px 0 1px 0 !important;
+}
+.syntaxhighlighter.ie .toolbar {
+  line-height: 8px !important;
+}
+.syntaxhighlighter.ie .toolbar a {
+  padding-top: 0px !important;
+}
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content {
+  background: none !important;
+}
+.syntaxhighlighter.printing .line .number {
+  color: #bbbbbb !important;
+}
+.syntaxhighlighter.printing .line .content {
+  color: black !important;
+}
+.syntaxhighlighter.printing .toolbar {
+  display: none !important;
+}
+.syntaxhighlighter.printing a {
+  text-decoration: none !important;
+}
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
+  color: black !important;
+}
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
+  color: blue !important;
+}
+.syntaxhighlighter.printing .keyword {
+  color: #006699 !important;
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter.printing .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter.printing .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter.printing .script {
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
+  color: red !important;
+}
+.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
+  color: black !important;
+}
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt1 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt2 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  background-color: #e0e0e0 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+  color: black !important;
+}
+.syntaxhighlighter table caption {
+  color: black !important;
+}
+.syntaxhighlighter .gutter {
+  color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+  border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  background-color: #6ce26c !important;
+  color: white !important;
+}
+.syntaxhighlighter.printing .line .content {
+  border: none !important;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  color: blue !important;
+  background: white !important;
+  border: 1px solid #6ce26c !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+  color: blue !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+  color: red !important;
+}
+.syntaxhighlighter .toolbar {
+  color: white !important;
+  background: #6ce26c !important;
+  border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+  color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+  color: black !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: black !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: blue !important;
+}
+.syntaxhighlighter .keyword {
+  color: #006699 !important;
+}
+.syntaxhighlighter .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter .script {
+  font-weight: bold !important;
+  color: #006699 !important;
+  background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: red !important;
+}
+
+.syntaxhighlighter .keyword {
+  font-weight: bold !important;
+}
+.content-localization {
+    overflow:hidden;
+}
+.content-localization .content-localizations,
+.content-localization .add-localization {
+    clear:right;
+    float:right;
+}
+.content-localization .content-localizations {
+    font-size:.9em;
+}
+.content-localization .content-localizations li,
+.content-localization .add-localization {
+    display:inline;
+    list-style: none;
+    line-height:0;
+    margin: 0 .2em;
+}
+.content-localization .content-localizations li::after {
+    content:",";
+}
+.content-localization .content-localizations li:last-child::after {
+    content:"";
+}
+.content-localization .content-localizations>* {
+    display:inline;
+}
+.content-localization .localizations {
+    margin:0;
+}
+
+.content-localization .content-localizations li::after {
+    content:", ";
+}
+.content-localization .content-localizations li:last-child::after {
+    content:"";
+}/*
+Credit: http://www.templatemo.com
+*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #7f7777;
+	font-family: Segoe UI, Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	background-color: #1c1816;
+	background-image: url("/Themes/NeoBlog/styles/images/templatemo_body.jpg");
+	background-repeat: repeat-x;
+	background-position: top;
+}
+
+a, a:link, a:visited { color: #9570c9; text-decoration: underline; }
+a:hover { color: #f27444; text-decoration: none; }
+
+p { margin: 0px; padding: 0; }
+img { border: none; }
+
+h1, h2, h3, h4, h5, h6 { color: #fff; }
+h1 { font-size: 150%; font-weight: normal; margin: 0 0 0px 0; padding: 10px 0 15px 0;  }
+/*{ font-size: 40px; font-weight: normal; margin: 0 0 30px 0; padding: 5px 0; }*/
+h2 { font-size: 150%; font-weight: normal; margin: 0 0 0px 0; padding: 10px 0 15px 0; }
+h3 { font-size: 140%; margin: 0 0 5px 0; padding: 0; padding: 0; color: #fff; font-weight: normal; }
+h4 { font-size: 130%; margin: 0 0 0 0; padding: 0 0 0 0; }
+h5 { font-size: 120%; margin: 0 0 10px 0; padding: 0; color: #fff; }
+h6 { font-size: 14px; margin: 0 0 5px 0; padding: 0; color: #fff; }
+
+hr {
+	border: none;
+	border-top: dashed 1px #7f7777;
+}
+
+.cleaner { clear: both; width: 100%; height: 0px; font-size: 0px;  }
+.cleaner_h10 { clear: both; width:100%; height: 10px; }
+.cleaner_h20 { clear: both; width:100%; height: 20px; }
+.cleaner_h30 { clear: both; width:100%; height: 30px; }
+.cleaner_h40 { clear: both; width:100%; height: 40px; }
+.cleaner_h50 { clear: both; width:100%; height: 50px; }
+.cleaner_h60 { clear: both; width:100%; height: 60px; }
+
+
+.float_l { float: left; }
+.float_r { float: right; }
+
+.image_wrapper { display: inline-block; padding: 4px; border: 1px solid #fff; background: none; margin-bottom: 10px; }
+.image_fl { float: left; margin: 3px 15px 0 0; }
+.image_fr { float: right; margin: 3px 0 0 15px; }
+
+blockquote { font-style: italic; margin-left: 10px;}
+cite { font-weight: bold; color:#3b3823; }
+cite span { color: #696443; }
+em { color: #e55822; }
+
+.tmo_list, .widget ul { margin: 0; padding: 0; list-style: none; }
+.tmo_list li, .widget li { background: transparent url("/Themes/NeoBlog/styles/images/templatemo_list.png") no-repeat scroll 0 0px; margin:0 0 20px; padding:0 0 0 18px; 	line-height: 1em; }
+.tmo_list li a, .widget li a { color: #9570c9; text-decoration: none; }
+.tmo_list li a:hover, .widget li a:hover { color: #f27444; text-decoration: none; }
+
+.widget-blog-archives li
+{
+	background:none;
+}
+
+.years li
+{
+	margin-bottom: 10px;
+}
+
+.btn_more a {
+	display: block;
+	color: #9a6bd7;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.btn_more a span {
+	font-size: 14px;
+}
+
+.btn_more a:hover, .btn_more a span:hover {
+	color: #fff;
+}
+
+.btn_more a span {
+	font-size: 16px;
+}
+
+.button a { color: #666; font-weight: bold; }
+
+.button a span { color: #000; font-size: 14px; }
+
+.button a:hover { color: #000; text-decoration: none; }
+
+#templatemo_top_wrapper {
+	width: 100%;
+	height: 45px;
+    background:	url("/Themes/NeoBlog/styles/images/templatemo_top_bar.jpg") center no-repeat; 
+}
+
+#templatemo_top {
+	width: 1155px;
+	height: 45px;
+	padding: 0 10px;
+	margin: 0 auto;
+    background:	url("/Themes/NeoBlog/styles/images/templatemo_top_bar.jpg") center no-repeat;
+}
+
+#social_box { float: right; display: inline-block; margin: 8px 0 0; padding: 0; list-style: none; }
+#social_box li { display: block; float: left; padding: 0; margin: 0; }
+#social_box li a { width: 24px; height: 24px; margin-right: 5px; }
+
+#templatemo_header_wrapper {
+	width: 100%;
+	height: 125px;
+    background:	url("/Themes/NeoBlog/styles/images/templatemo_header.jpg") no-repeat center; 
+}
+
+#templatemo_header {
+	width: 1155px;
+	height: 125px;
+	padding: 0 10px;
+	margin: 0 auto;
+	background: url("/Themes/NeoBlog/styles/images/templatemo_header.jpg") no-repeat center;
+}
+
+#templatemo_header  #site_title {
+	float: left;
+	padding-top: 30px;
+}
+
+#templatemo_header  #site_title h1 {
+	margin: 0;
+	padding: 0;
+}
+
+#templatemo_header  #site_title a {
+	margin: 0px;
+	padding: 0px;
+	font-size: 160%;
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#templatemo_header  #site_title a span {
+	display: block;
+	font-size: 16px;
+	color: #ccc;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+#header_right {
+	float: right;
+	width: 660px;
+}
+
+/* menu */
+
+#templatemo_menu_wrapper {
+	width: 100%;
+	height: 50px;
+    background:	url("/Themes/NeoBlog/styles/images/templatemo_menu.jpg") center; 
+}
+
+#templatemo_menu {
+	width: 1155px;
+	height: 50px;
+	padding: 0 10px;
+	margin: 0 auto;
+    background:	url("/Themes/NeoBlog/styles/images/templatemo_menu.jpg") center;
+}
+
+#templatemo_menu ul {
+	height: 53px;
+	margin: 0;
+	padding: 16px 0 0 0;
+	list-style: none;
+}
+
+#templatemo_menu ul li {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background: none;
+}
+
+#templatemo_menu ul li a {
+	float: left;
+	display: block;
+	margin-right: 70px;
+	color: #d2a3cd;	
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	outline: none;
+	border: none;
+}
+
+#templatemo_menu ul li a:hover, #templatemo_menu ul .current {
+	color: #f4703a;
+}
+
+/* end of menu */
+
+/* content */
+
+#templatemo_middle_wrapper_outer {
+	clear: both;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#templatemo_middle_wrapper_inner {
+	width: 1200px;
+	padding: 10px 0;
+	margin: 0 auto;
+	background: url("/Themes/NeoBlog/styles/images/templatemo_content_top.jpg") top center no-repeat;	
+}
+
+#templatemo_middle_top { width: 1150px; height: 10px; margin: 0 auto; }
+#templatemo_middle_bottom { width: 1150px; height: 10px; margin: 0 auto; }
+
+#templatemo_middle {
+	padding: 10px 25px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#templatemo_content {
+	float: left;
+	width: 850px;
+	padding-right: 20px;
+	border-right: 1px solid #342e2e;
+	line-height: 1.5em;
+}
+
+#templatemo_content p {
+	margin-bottom: 10px;
+}
+
+.content_box {
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #433d3a;	
+}
+
+.col_w310 {
+	float: left;
+	width: 270px;
+	padding-right: 40px;
+}
+
+#templatemo_slider {
+	width: 600px;
+	height: 365px;
+	background: #231e1c;
+	border: 10px solid #231e1c;
+	border-bottom: 1px solid #433d3a;
+	margin-bottom: 40px;
+}
+
+#templatmeo_sidebar {
+	float: right;
+	width: 260px;
+}
+
+.sidebar_box, .zone-aside-second .widget {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #433d3a;
+}
+
+.widget header h1
+{
+	font-size: 18px; margin: 0 0 20px 0; padding: 0 0 10px 0;	
+}
+
+.post_box, .blog-post {
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #433d3a;
+}
+
+ul.blog-posts, ul.content-items
+{
+	list-style: none;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+article.page div.metadata
+{
+	display: none;
+}
+
+article.mobile-app div.published
+{
+	display: none;
+}
+
+.metadata
+{
+	overflow: hidden;
+}
+
+.metadata .published
+{
+	float: left;
+	margin-right: 30px;
+}
+
+.metadata .commentcount
+{
+	float: left;
+}
+
+.metadata .sharebar-wrapper
+{
+	float: right;
+}
+
+.post_box_last {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.post_box h2, .blog-post h1 {
+	margin: 0;
+	padding: 10px 0 10px 0;
+	line-height: 30px;
+}
+
+.post_box h2 a, .blog-post  h1 a { 
+	color: #FFF; 
+	text-decoration: none; 
+}
+
+.post_box .post_meta, .blog-post  .metadata {
+	padding: 5px;
+	margin-bottom: 20px;
+	background: #000000;
+	font-size: 80%;
+}
+
+.post_box p, .blog-post p {
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+.post_box img, .blog-post img {
+	padding: 5px; 
+	border: 1px solid #000;
+	background: #221c1c;
+	display: inline-block;
+}
+
+.post_box .category {
+	float: left;
+	width: 300px;
+}
+
+.post_box .comment {
+	position: absolute;
+	top: -10px;
+	right: 0px;
+	width: 70px;
+	height: 42px;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	background: url("/Themes/NeoBlog/styles/css/images/templatemo_comment.png") no-repeat;
+}
+
+.post_box .comment a {
+	color: #333;
+	text-decoration: none;
+}
+
+#comment_section {
+	clear: both;
+	margin-bottom: 60px;
+	width: 585px;
+}
+
+.first_level {
+	margin: 0; padding: 0;
+}
+
+.comments {
+	list-style: none; 
+	padding: 0 0 0 0;
+}
+
+.comments li { margin-bottom: 10px; list-style:none; }
+.comments li .comment { border: 1px solid #3c3735;  background: #282321; }
+.comments li .commentbox2 { border: 1px solid #534e4b;  background: #3c3735; }
+
+.comments li .comment { clear: both; padding: 15px;  }
+.comment .gravatar { float: left; width: 50px; border: 1px solid #3c3735; margin-right: 15px; background: #3c3735; }
+.comment .gravatar img { margin: 0; width: 50px; height: 50px; }
+.comment .comment_text { margin: 0 0 0 65px; }
+
+.comment .comment_text p { margin: 0; color: #aaaaaa; }
+.comment header h4 { font-size: 14px; color: #d25050; margin-bottom: 10px; }
+.comment header h4 when { font-size: 12px; font-weight: normal; color: #948393; padding-left: 10px; }
+.comment_text .time { font-size: 12px; font-weight: normal; color: #948393; padding-left: 10px; }
+.comment_text .reply a { display: block; clear: both; float: right; padding: 1px 10px; height: 24px; text-align: center; background: #3694ab; border: 1px solid #fff; color: #fff; } 
+
+fieldset
+{
+	border: 0px none;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+input {
+	margin-top: 5px;
+	padding: 5px;
+	width: 300px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aaaaaa;
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;
+}
+
+.search-form input
+{
+	width: 200px;
+	margin-top: 5px;
+}
+
+.search-form button[type="submit"]
+{
+	margin-top: 5px;
+}
+
+.search-form fieldset
+{
+	margin-top: 5px;
+}
+
+input[type="submit"], input[type="button"], button {
+	width: 90px;
+	font-weight: bold;
+	color: #aaaaaa;
+	cursor: pointer;
+	padding: 8px 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;	
+}
+
+#add-comment
+{
+	display: none;
+}
+
+.comment-form {
+	clear: both;
+}
+
+.comment-form h3 {
+	font-size: 20px;
+	border-bottom: 1px dotted #666;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+form.comment-form {
+	padding: 20px;
+	background: #282321;
+	border: 1px solid #3c3735;
+}
+
+.comment-form textarea {
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;
+	display: block;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aaaaaa;
+	height: 150px;
+	margin-top: 5px;
+	padding: 5px;
+	width: 450px;
+}
+
+h2#commenter
+{
+	border: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.comment-form ol, .login-form ol
+{
+	list-style: none;
+	border: 0px none;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.comment-form li, .login-form li{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.comment-form form input {
+	margin-top: 5px;
+	padding: 5px;
+	width: 300px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aaaaaa;
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;
+}
+
+.comment-form .primaryAction {
+	width: 160px;
+	font-weight: bold;
+	color: #aaaaaa;
+	cursor: pointer;
+	padding: 8px 10px;
+}
+
+.comment-form label + input, .login-form label + input 
+{
+	display: block;
+}
+
+.service_box { clear: both; margin-bottom: 50px; }
+.service_box img { float: left; width: 48px; height: 48px; }
+.service_box .sb_right { float: right; width: 540px; }
+
+
+#contact_form { padding: 0; }
+#contact_form form { margin: 0px; padding: 0px; }
+
+#contact_form form input {
+	margin-top: 5px;
+	padding: 5px;
+	width: 250px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aaaaaa;
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;
+}
+
+#contact_form form label { display: block; width: 100px; margin-right: 10px; font-size: 14px; color: #a39d9d; }
+
+#contact_form form textarea {
+	background: #13100F none repeat fixed 0 0;
+	border: 1px solid #3c3735;
+	display: block;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aaaaaa;
+	height: 150px;
+	margin-top: 5px;
+	padding: 5px;
+	width: 260px;
+}
+
+#contact_form .submit_btn {
+	width: 90px;
+	font-weight: bold;
+	color: #aaaaaa;
+	cursor: pointer;
+	padding: 8px 10px;
+}
+
+/* gallery */
+#gallery { clear: both; }
+#gallery a { border: none; }
+#gallery ul { list-style: none; margin: 0; padding: 0; }
+#gallery ul li { padding: 0 0 30px 0; margin: 0 0 30px 0; border-bottom: 1px dashed #433d3a; }
+#gallery ul li .left { float: left; width: 300px; }	
+#gallery ul li .left img { width: 260px; height: 160px; border: 5px solid #000; }
+#gallery ul li .right { float: right; width: 320px; }
+	 
+/* end of gallery */
+
+.ads_125 { margin: 0; padding: 0; list-style: none; }
+.ads_125 li { display: block; float: left; margin: 0 10px 10px 0; padding: 0; display: inline-block; }
+.ads_125 li a { display: block; width: 125px; height: 125px; }
+.ads_125 .odd { margin-right: 0; }
+.ads_125 .last_row { margin-bottom: 0; }
+
+.recent_comment_box { padding: 0 0 15px; margin: 0 0 15px; border-bottom: 1px dashed #433d3a; }
+.recent_comment_box a { color: #e55822; font-weight: bold; }
+
+/* footer */
+
+#templatemo_footer {
+	clear: both;
+	width: 1160px;
+	padding: 20px;
+}
+
+.col_w310 {
+	width: 270px;
+	padding-right: 40px;
+}
+
+
+#templatemo_footer h4 {
+	color: #cfbbb1;
+	margin-bottom: 10px;
+}
+
+#templatemo_footer p {
+	margin-bottom: 10px;
+}
+
+#templatemo_footer ul { padding: 0; margin: 0; list-style: none; }
+
+#templatemo_footer li { padding: 0; margin: 0 0 5px 0; }
+
+#templatemo_footer li a {
+	display: block;
+	text-decoration: none;
+	 border-bottom: 1px dotted #322d2b;
+}
+
+#templatemo_footer li a:hover {
+	color: #fff;
+}
+
+#templatemo_footer .last {
+	padding-right: 0;
+}
+
+/* end of footer*/
+
+/* copyright */
+
+#templatemo_copyright_wrapper {
+	width: 100%;
+	background: #120f0e;
+	border-top: 1px solid #36312e;
+}
+
+#templatemo_copyright {
+	clear: both;
+	width: 930px;
+	padding: 10px 20px;
+	margin: 0 auto;
+	text-align: center;
+	color: #cfbbb1;
+	border-top: 1px solid #000;
+}
+
+#templatemo_copyright a {
+	color: #cfbbb1;
+}
+
+
+a.rss
+{
+	display:none;
+}
+
+div.blog-description
+{
+	display:none;
+}
+
+article.content-item.blog > header
+{
+	display: none;
+}
+
+img.facebook
+{
+	
+}
+
+.stepcarousel {
+	BORDER-BOTTOM: black 0px; POSITION: relative; BORDER-LEFT: black 0px; WIDTH: 600px; HEIGHT: 570px; OVERFLOW: scroll; BORDER-TOP: black 0px; BORDER-RIGHT: black 0px
+}
+.stepcarousel .belt {
+	POSITION: absolute; TOP: 0px; LEFT: 0px
+}
+.stepcarousel .panel {
+	MARGIN: 5px; WIDTH: 600px; FLOAT: left; OVERFLOW: hidden
+}
+
+.stepcarousel .panel .leftpaneltext
+{
+	width: 270px; 
+	float: left;
+}
+
+.stepcarousel .panel .leftpanelimg
+{
+	float: left;
+}
+
+.stepcarousel .panel .rightpanelimg
+{
+	float: left; 
+	margin-left: 30px;
+}
+
+.stepcarousel .panel .rightpaneltext
+{
+	width: 270px; 
+	float: left;
+	margin-left: 30px;
+}
+
+.stepcarousel .panel p
+{
+	font-size: 110%;
+}
+
+.stepcarousel .panel p {
+	text-align: left
+}
+
+
+/* Pager
+***************************************************************/
+
+.pager { list-style: none; padding: 0; margin: 12px 0 0 0; }
+.pager li { float: left; padding: 0 12px 0 0; margin: 0; }
+.pager a, .pager span { font-size: 1.077em; display: block; background-color: #dbdbdb; padding: 6px 6px; color: #434343;}
+.pager a:hover { background-color: #434343; color: #fff; }
+.pager span { background-color:inherit; }form.search {
+    float:left;
+}
+form.search input {
+    display:inline;
+    width:20em;
+}
+.search-summary {
+    float:right;
+    font-style:italic;
+    margin-top:0;
+}
+.search-summary em {
+    font-weight:bold;
+}
+.search-results {
+    clear:both;
+}
+
+.search-form input[type="text"] { float: left; }
+.search-form button[type="submit"] { float: left; margin: 0; margin-left: 6px; }
+
+/*Search widget styles. More syles could be added here to target specific zones.*/
+.widget-search-form {
+    float:right;
+ }
+
