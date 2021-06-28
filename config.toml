@@ -3,6 +3,7 @@ languageCode = "en"
 defaultContentLanguage = "en"
 title = "Raffaele Fanizzi"
 theme = "uBlogger"
+enableEmoji = true
 
 [params]
   # uBlogger theme version
