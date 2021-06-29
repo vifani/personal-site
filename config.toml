@@ -106,6 +106,22 @@ enableEmoji = true
     contentLength = 4000
     # placeholder of the search bar
     placeholder = ""
+
+  # Analytics config
+  # 网站分析配置
+  [params.analytics]
+    enable = true
+    # Google Analytics
+    [params.analytics.google]
+      # [UA-XXXXXXXX-X] google analytics code
+      # [UA-XXXXXXXX-X] 谷歌分析代号
+      id = "UA-18497747-1"
+      # whether to use gtag linked
+      # 是否使用gtag链接
+      gtag = false
+      # whether to anonymize IP
+      # 是否匿名化用户 IP
+      anonymizeIP = false
   
   [params.social]
     Facebook = "raffaele.fanizzi"
