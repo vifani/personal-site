@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Raffaele Fanizzi",
+    "short_name": "Raffaele Fanizzi",
+    "description": "Raffaele Fanizzi's Blog",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
