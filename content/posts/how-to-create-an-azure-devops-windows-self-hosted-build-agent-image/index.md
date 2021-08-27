@@ -1,5 +1,5 @@
 ---
-title: "How to create an Azure DevOps Windows Self-Hosted Build Agent Docker Image"
+title: "How to create an Azure DevOps Self-Hosted Build Agent Docker Image based on Windows"
 url: "how-to-create-an-azure-devops-windows-self-hosted-build-agent-docker-image"
 date: 2021-08-27T11:54:46.0000000Z
 lastmod: 2021-08-27T11:54:46.0000000Z
@@ -155,7 +155,7 @@ Taking a look at the script you can see that some environmental variables are us
 - **AZP_POOL**: the Azure DevOps Agent Pool name (
 - **AZP_AGENT_NAME**: the agent name
 
-You can manage Azure Pools in Azure DevOps from Project Settings -> Agent pools, see https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
+You can manage Azure Pools in Azure DevOps from Project Settings -> Agent pools. Take a look [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
 ![Add Agent Pool in Azure DevOps](addagentpool.png "Add Agent Pool in Azure DevOps")
 You can find both files in this repository: [https://github.com/vifani/devops-hosted-agent](https://github.com/vifani/devops-hosted-agent)
 
