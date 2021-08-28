@@ -115,10 +115,10 @@ enableEmoji = true
     [params.analytics.google]
       # [UA-XXXXXXXX-X] google analytics code
       # [UA-XXXXXXXX-X] 谷歌分析代号
-      id = "UA-18497747-1"
+      id = "G-XG8HD7EG4V"
       # whether to use gtag linked
       # 是否使用gtag链接
-      gtag = false
+      gtag = true
       # whether to anonymize IP
       # 是否匿名化用户 IP
       anonymizeIP = false
