@@ -2,7 +2,7 @@
 title: "How to create an Azure DevOps Self-Hosted Build Agent Docker Image based on Windows"
 url: "how-to-create-an-azure-devops-windows-self-hosted-build-agent-docker-image"
 date: 2021-08-27T11:54:46.0000000Z
-lastmod: 2021-08-27T11:54:46.0000000Z
+lastmod: 2021-08-28T09:54:46.0000000Z
 tags: ["Azure","DevOps","Self-Hosted","Hosted Agent","Docker","Continuous Delivery","Continuos Integration","CI/CD"]
 draft: false
 toc:
@@ -13,16 +13,16 @@ resources:
 ---
 Azure DevOps provides basically two types of agents: **Microsoft-Hosted agents** and **Self-Hosted agents**.
 ## Microsoft-Hosted agents
-The former are agents completely managed by Microsoft in the cloud, can be based on **Windows, Ubuntu or macOS**. For each OS, a set of software in included in the VM image used to spin up a new VM when a new job need to be executed (https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software).
+Microsoft-Hosted agents are completely managed by Microsoft in the cloud, can be based on **Windows, Ubuntu or macOS**. For each OS, a set of software in included in the VM image used to spin up a new VM when a new job need to be executed (more details [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software)).
 
 The main advantage in using Microsoft-Hosted agents is that most of the time provide everything you need to build and deploy your solution without the need to set up, configure and maintain the OS and software packages required. 
 
-The drawbacks are that you don't have control on the CPU and memory provided with the VM and you cannot have access to internal networks (everything need to be exposed on Internet). 
+The drawbacks are that you don't have control on the CPU and memory provided with the VM and you cannot have access to internal networks (everything the agent access need to be exposed on Internet). 
 
 More details on capabilities and limitations of Microsoft-Hosted agents are [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#capabilities-and-limitations).
 
 ## Self-Hosted agents
-Self-Hosted agents are basically agents that runs wherever you need. You have to take care about everything: the installation, set up and updates of the OS, all software packages required by your pipelines to build and deploy your solutions, the network configurations to reach the code repository, the Azure resources and, why not, the VMs where you will deploy software components. Also, for Self-Hosted agents, the supported operative systems are Windows, Ubuntu and macOS.
+Self-Hosted agents are basically agents that runs wherever you need. You have to take care about everything: the installation, set up and updates of the OS, all software packages required by your pipelines to build and deploy your solutions, the network configurations to reach the code repository, the Azure resources and, if required, the VMs where you will deploy software components. The supported operative systems are Windows, Ubuntu and macOS.
 
 ## Requirements
 In the last project I have worked on, we had the need to deploy many Self-Hosted agents and, because the solution was based on .NET Framework 4.8, we had to use Windows based agents. 
@@ -66,7 +66,7 @@ COPY start.ps1 .
 # This entry point starts the developer command prompt and launches the PowerShell shell.
 ENTRYPOINT ["C:\\BuildTools\\Common7\\Tools\\VsDevCmd.bat", "&&","powershell.exe", ".\\start.ps1"]
 ```
-As you can see, we use as base image a **Windows Server Core image with .NET Framework 4.8** already installed. When we download the Visual Studio Build Tools and run the installation in quiet mode (an unattended mode that doesn't require user interaction).
+As you can see, we use as base image a **Windows Server Core** image with .NET Framework 4.8 already installed. Then we download the Visual Studio Build Tools and run the installation in quiet mode (an unattended mode that doesn't require user interaction).
 Is very important to analyze the Visual Studio Build Tools setup arguments. As you can see we use the **--add** parameter to define all the workloads we need to install. A workload is a set of features and applications installed, and you can find the list of workloads and the features included in each workload [here](https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools).
 
 Obviously you can adapt this part with the workloads you need. In our case we had to add a lot of workloads because of the dependencies required by our solution to build correctly.
@@ -147,15 +147,16 @@ The script logic can be summarized as follows:
 - Downloads and installs the latest version of the Agent for Windows x64 platform
 - Configures the agent (this will register the agent on the Agent Pool you specify)
 - Executes the agent
+
 If an error occurs (finally block), the remove procedure is invoked in order to deregister the agent from the Agent Pool.
 
 Taking a look at the script you can see that some environmental variables are used to configure the agent installation. The following variables need to be configured:
 - **AZP_URL**: for example "https://dev.azure.com/yourorganization"
-- **AZP_TOKEN**: a valid Personal Access Token (see https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
-- **AZP_POOL**: the Azure DevOps Agent Pool name (
+- **AZP_TOKEN**: a valid Personal Access Token (more details [here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page))
+- **AZP_POOL**: the Azure DevOps Agent Pool name
 - **AZP_AGENT_NAME**: the agent name
 
-You can manage Azure Pools in Azure DevOps from Project Settings -> Agent pools. Take a look [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
+You can manage Azure Pools in Azure DevOps from Project Settings → Agent pools. Take a look [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
 ![Add Agent Pool in Azure DevOps](addagentpool.png "Add Agent Pool in Azure DevOps")
 You can find both files in this repository: [https://github.com/vifani/devops-hosted-agent](https://github.com/vifani/devops-hosted-agent)
 
