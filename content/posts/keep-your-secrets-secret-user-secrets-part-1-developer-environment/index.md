@@ -16,12 +16,14 @@ This is the first of a series of posts I will write about a topic I care a lot: 
 First I want to clarify and give a definition about **what is a secret**. In software development, a secret is confidential information that is used to access protected resources. There are a lot of examples we can do: database connection strings, credentials such as username/password or app id/app secret, certificates with private key, personal access tokens. Because secrets are used to access protected resources, we need to carefully manage them in order to reduce the surface attack area.
 
 ## The problem
-In the last years we have seen a big code repositories spread using platform such as GitHub, and most of them are available in a public way, without any kind of authentication. This is obvious because we are talking mostly about open source projects, so sharing the code in a public way is part of the game. The point is that one of the most common and **wrong** place where secrets are defined are configuration files. Why? Because it is simple and easy and, to be honest, is also a pattern that you usually find inside a lot of online examples, tutorials, hello world samples.
-Unfortunately the dark web is full of credentials acquired by web crawlers that retrieve them from configuration files stored in publicly accessible git repositories.
-So, the main goal of this series of posts is to find alternatives to configuration files pushed on your code repository where you can safely store secrets
+In the last years we have seen a big code repositories spread using platform such as GitHub, and most of them are available in a public way, without any kind of authentication. This is obvious because we are talking mostly about open source projects, so sharing the code in a public way is part of the game. The point is that one of the most common and **wrong** place where secrets are defined are configuration files. Why? Because it is simple and easy and, to be honest, is also a pattern that we usually find inside a lot of online examples, tutorials, hello world samples.
+
+Unfortunately the dark web is full of credentials acquired by web crawlers that retrieve them from configuration files stored in publicly accessible git repositories. According to the [State of Secrets Sprawl on GitHub report](https://res.cloudinary.com/da8kiytlc/image/upload/v1615208698/StateofSecretSprawlReport-2021.pdf), 85% of the leaks occur on developers' personal repositories and only the remaining 15% within repositories owned by organizations.
+
+So, the main goal of this series of posts is to find alternatives to configuration files pushed on your code repository where you can safely store secrets.
 
 ## User Secrets
-The first alternative place where you can store secrets is called **User Secrets**. This approach is strictly coupled with the .NET configuration system and we have the possibility to use it both in .NET and .NET Framework projects. 
+The first alternative place where you can store secrets is called **User Secrets**. This approach is strictly coupled with the .NET configuration system, and we have the possibility to use it both in .NET and .NET Framework projects. 
 
 ## User Secrets in .NET
 User Secrets in .NET (.NET Core, .NET 5, 6, 7 and so on) consists in using a new file called **secrets.json** located in the folder **%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json**. 
@@ -131,6 +133,6 @@ After you have updated the web.config file, Visual Studio will support user secr
 Ok, I admit that it may seem complicated, but in reality we are only doing two steps: adding a NuGet package to our project and updating the web.config file. You don't have to change anything in your code because the configuration builders system will automatically initialize the **System.Configuration.ConfigurationManager** static class (commonly used in .NET Framework projects) retrieving settings from both the standard web.config file and the additional **secrets.xml** file.
 
 ## Conclusion
-In this first article of the series **Keep Your Secrets Secret**, we have seen together our we can move secrets from appsettings.json and web.config files to different files located on the developer machine, in a folder that will ensure that they will not be pushed on your code repository. 
+In this first article of the series **Keep Your Secrets Secret**, we have seen together how we can move secrets from appsettings.json and web.config files to different files located on the developer machine, but in a folder that will not be pushed on your code repository. 
 
-The main advantages of this approach are that is quick and easy to implement (it requires zero code changes in most .NET projects) and is well-supported by Visual Studio. There are some disadvantages by the way: cannot be used in production, cannot be used for certificates (only for text-based secrets such as connection strings, passwords, client secrets) and requires that all developers in the team have a local copy of all secrets.
+The main advantages of this approach are that is quick and easy to implement (it requires zero code changes in most .NET projects) and is well-supported by Visual Studio. There are some disadvantages by the way: cannot be used in production, cannot be used for certificates (only for text-based secrets such as connection strings, passwords, client secrets) and require that all developers in the team have a local copy of all secrets.
