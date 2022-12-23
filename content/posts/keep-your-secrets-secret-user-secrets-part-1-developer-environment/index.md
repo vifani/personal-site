@@ -2,7 +2,7 @@
 title: "Keep Your Secrets Secret: Part 1 - User Secrets"
 url: "keep-your-secrets-secret-user-secrets-part-1-developer-environment"
 date: 2022-08-01T10:00:00.0000000Z
-tags: ["Azure","DevOps","Secure DevOps","Secrets Management","User Secrets","App Secrets","Developer Environment","Continuous Delivery","Continuos Integration","CI/CD"]
+tags: ["Azure","DevOps","Secure DevOps","Secrets Management","User Secrets","App Secrets","Developer Environment","Continuous Delivery","Continuos Integration","CI/CD","Configuration"]
 draft: false
 toc:
   enable: true

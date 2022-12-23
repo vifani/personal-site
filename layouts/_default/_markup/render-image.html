@@ -6,8 +6,10 @@
 {{- end -}}
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ if $imageOriginal }}
-    {{ if lt 2000 $imageOriginal.Width }}
-        {{ $imageOriginal = ($imageOriginal.Resize "2000x q100") }}
+    {{ if ne $imageOriginal.MediaType.SubType "svg" }}
+        {{ if lt 2000 $imageOriginal.Width }}
+            {{ $imageOriginal = ($imageOriginal.Resize "2000x q100") }}
+        {{ end }}
     {{ end }}
     {{ $imageOriginal = $imageOriginal.RelPermalink }}
 {{ else }}
