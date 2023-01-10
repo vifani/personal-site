@@ -1,7 +1,7 @@
 ---
 title: "Keep Your Secrets Secret: Part 2 - Azure Key Vault"
 url: "keep-your-secrets-secret-part-2-azure-key-vault-configuration"
-date: 2023-01-09T12:00:00.0000000Z
+date: 2023-01-09T12:34:00.0000000Z
 tags: ["Azure","DevOps","Secure DevOps","Secrets Management","Azure Key Vault","Developer Environment","Continuous Delivery","Continuos Integration","CI/CD","Configuration"]
 draft: false
 toc:
